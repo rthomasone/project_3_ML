@@ -1,0 +1,160 @@
+{
+    "name": "root",
+    "children": [{
+            "name": "classical",
+            "children": [
+                { "name": "ambient", "value": 10 },
+                { "name": "background", "value": 10 },
+                { "name": "ballroom", "value": 10 },
+                { "name": "baroque", "value": 10 },
+                { "name": "cello", "value": 10 },
+                { "name": "choir", "value": 10 },
+                { "name": "choral", "value": 10 },
+                { "name": "focus", "value": 10 },
+                { "name": "instrumental", "value": 10 },
+                { "name": "melanchonlia", "value": 10 },
+                { "name": "opera", "value": 10 },
+                { "name": "orchestra", "value": 10 },
+                { "name": "romantic", "value": 10 },
+                { "name": "sleep", "value": 10 },
+                { "name": "string", "value": 10 }
+            ]
+        },
+        {
+            "name": "country",
+            "children": [
+                { "name": "banjo", "value": 10 },
+                { "name": "dirt", "value": 10 },
+                { "name": "redneck", "value": 10 }
+            ]
+        },
+        {
+            "name": "electronic",
+            "children": [
+                { "name": "bass", "value": 10 },
+                { "name": "beat", "value": 10 },
+                { "name": "dub", "value": 10 },
+                { "name": "edm", "value": 10 },
+                { "name": "electro", "value": 10 },
+                { "name": "house", "value": 10 },
+                { "name": "lo-fi", "value": 10 },
+                { "name": "rave", "value": 10 },
+                { "name": "step", "value": 10 },
+                { "name": "techno", "value": 10 },
+                { "name": "trance", "value": 10 },
+                { "name": "tropical", "value": 10 }
+            ]
+        },
+        {
+            "name": "indie",
+            "children": [
+                { "name": "age", "value": 10 },
+                { "name": "americana", "value": 10 },
+                { "name": "folk", "value": 10 },
+                { "name": "lilith", "value": 10 },
+                { "name": "mellow", "value": 10 },
+                { "name": "songwriter", "value": 10 }
+            ]
+        },
+        {
+            "name": "jazz",
+            "children": [
+                { "name": "big", "value": 10 },
+                { "name": "blues", "value": 10 },
+                { "name": "bop", "value": 10 },
+                { "name": "bossa-nova", "value": 10 },
+                { "name": "doo-wop", "value": 10 },
+                { "name": "jam", "value": 10 },
+                { "name": "lounge", "value": 10 },
+                { "name": "stride", "value": 10 },
+                { "name": "swing", "value": 10 }
+            ]
+        },
+        {
+            "name": "latin",
+            "children": [
+                { "name": "bachata", "value": 10 },
+                { "name": "banda", "value": 10 },
+                { "name": "bolero", "value": 10 },
+                { "name": "cumbia", "value": 10 },
+                { "name": "duranguense", "value": 10 },
+                { "name": "grupera", "value": 10 },
+                { "name": "mexican", "value": 10 },
+                { "name": "mpb", "value": 10 },
+                { "name": "norteno", "value": 10 },
+                { "name": "ranchera", "value": 10 },
+                { "name": "salsa", "value": 10 },
+                { "name": "samba", "value": 10 },
+                { "name": "tango", "value": 10 },
+                { "name": "tejano", "value": 10 }
+            ]
+        },
+        {
+            "name": "pop",
+            "children": [
+                { "name": "boy", "value": 10 },
+                { "name": "dance", "value": 10 },
+                { "name": "easy", "value": 10 },
+                { "name": "funk", "value": 10 },
+                { "name": "girl", "value": 10 },
+                { "name": "standards", "value": 10 },
+                { "name": "wave", "value": 10 }
+            ]
+        },
+        {
+            "name": "r&b",
+            "children": [
+                { "name": "motown", "value": 10 },
+                { "name": "reggae", "value": 10 },
+                { "name": "soul", "value": 10 },
+                { "name": "storm", "value": 10 }
+            ]
+        },
+        {
+            "name": "rap",
+            "children": [
+                { "name": "hop", "value": 10 },
+                { "name": "trap", "value": 10 },
+                { "name": "urban", "value": 10 }
+            ]
+        },
+        {
+            "name": "rock",
+            "children": [
+                { "name": "alternative", "value": 10 },
+                { "name": "core", "value": 10 },
+                { "name": "disco", "value": 10 },
+                { "name": "doom", "value": 10 },
+                { "name": "drone", "value": 10 },
+                { "name": "emo", "value": 10 },
+                { "name": "gaze", "value": 10 },
+                { "name": "grunge", "value": 10 },
+                { "name": "hardcore", "value": 10 },
+                { "name": "metal", "value": 10 },
+                { "name": "ska", "value": 10 },
+                { "name": "thrave", "value": 10 }
+            ]
+        },
+        {
+            "name": "show tunes",
+            "children": [
+                { "name": "bollywood", "value": 10 },
+                { "name": "broadway", "value": 10 },
+                { "name": "comic", "value": 10 },
+                { "name": "disney", "value": 10 },
+                { "name": "filmi", "value": 10 },
+                { "name": "hollywood", "value": 10 },
+                { "name": "movie", "value": 10 },
+                { "name": "soundtrack", "value": 10 }
+            ]
+        },
+        {
+            "name": "worship",
+            "children": [
+                { "name": "ccm", "value": 10 },
+                { "name": "christian", "value": 10 },
+                { "name": "gospel", "value": 10 }
+            ]
+        }
+    ]
+}

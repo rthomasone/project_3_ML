@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Machine Learning</title>
+    <!-- Import Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Import Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cyborg/bootstrap.min.css" integrity="sha384-Uga2yStKRHUWCS7ORqIZhJ9LIAv4i7gZuEdoR1QAmw6H+ffhcf7yCOd0CvSoNwoz" crossorigin="anonymous">
+    <!-- Import Bootstap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- regular css -->
+    <link href="../static/css/ML.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="/">
+                <img src="../static/assets/machine-learning.png" width="30" height="30" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/features">Audio Features <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/eda">Data Exploration <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/mlmodels">ML Models <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/summary">Summary <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/predictor">Predictor <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- <main role="main">
+        Jumbotron
+        <div class="container">
+            <div class="row" class="col-lg-12 center-block">
+                <div class="jumbotron">
+                    <h1 class="display-3">Machine Learning</h1>
+                    <p class="lead">We used supervised learning, classification algorithms to predict which genre a track would belong too. The 3 models We used were: Logistic regression analysis, random forest classifier and Xtreme gradient boosting classifier.</p>
+                    <hr class="my-4">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        Insert Body Text
+
+
+
+
+        </div>
+        /.container
+
+
+        FOOTER
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; Published 2020. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main> -->
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Methodology</h1>
+                <p class="lead" style="font-weight: 500;">These are the predictive models used for Identifying the genre of a track</p>
+                <p>
+
+                </p>
+            </div>
+        </section>
+
+        <!-- this is where my website links and picture are located -->
+        <div class="album py-5 bg-light">
+
+            <div class="container">
+
+                <h4>Data Gathering</h4>
+                <p>To begin building a model, we needed a lot of data. A large dataset was needed so that our model could make accurate class label assignments. </p>
+                <p>On the Kaggle website, there were multiple pre-compiled csv files with collections of information from Spotify API. Therefore, we simply chose a dataset containing Spotify data from 1921 up until 2020 and containing 160,000 tracks. Doing
+                    this made data collection quick and efficient as well as provided our model with large data. </p>
+            </div>
+
+            <div class="container">
+                <!-- genre mapping -->
+                <h4>Genre Mapping</h4>
+                <p>The dataset initially contained up to 96 genre categories. We simplified it by mapping all 96 genre groups to 12 genres. These were the genre categories we came up with</p>
+                <div class="row">
+                    <img src="../static/assets/genre_mapping_table.png" alt="">
+                </div>
+
+            </div>
+
+            <br>
+            <div class="container">
+                <!-- Exploring audio features by genre -->
+
+                <h4>Encoding Genre</h4>
+                <p>The final stage of our data cleaning process was to one-hot encode the data. This entailed converting the genre columns into 12 columns representing genre categories, and then using 0’s and 1’s to represent the nonexistence or existence
+                    of a category, respectively.
+                </p>
+
+                <div class="row">
+                    <img src="../static/assets/encoding genre.png" alt="">
+                </div>
+                <br>
+                <!-- models -->
+                <h4>Modeling</h4>
+
+                <p>We split the sample data into a test data(80%) and train data(20%), balanced our features by scaling them and finally, we used the scaled data for creating predictive models. </p>
+                <p>Supervised learning classification algorithms were used to predict which genre a track would belong too. The 3 models We used were: Logistic regression analysis, random forest classifier and Xtreme gradient boosting classifier.</p>
+
+                <h6>Logistic regression</h6>
+                <p>The first model attempted was the logistic regression because it is the simplest. It works by using the sigmoid function (logistic function) to map and predict the probabilities of a track falling into a genre. If the probability of a
+                    track were closer to 1, it will be transformed into a binary value of 1(meaning it falls into that category). Else, it will be transformed into a binary value of 0(meaning it does not fall into that genre).</p>
+
+                <h6>Random Forest</h6>
+                <p>Since we were tackling our models in the order of simplicity, the next model was the random forest classifer; an ensemble tree based learning algorithm that combines decision trees.</p>
+
+                <h6>XGBoosting Classifier</h6>
+                <p>The final model that we tested was the extreme gradient boosting classifier. It is an implementation of gradient boosted decision trees designed for speed and performance </p>
+
+                <!-- comparison -->
+                <h4>Comparisons & Selection</h4>
+                <p>We used the ROC curve, Accuracy, Precision and Recall metrics to decide on the best model for predicting genres.These were the results: </p>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Type</th>
+                            <th scope="col">Accuracy</th>
+                            <th scope="col">Precision</th>
+                            <th scope="col">Recall</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="table-active">
+                            <th scope="row">Logistic regression</th>
+                            <td>0.41</td>
+                            <td>0.39</td>
+                            <td>0.41</td>
+                        </tr>
+
+                        <tr class="table-active">
+                            <th scope="row">Random Forest</th>
+                            <td>0.58</td>
+                            <td>0.63</td>
+                            <td>0.60</td>
+                        </tr>
+
+                        <tr class="table-active">
+                            <th scope="row">XGBoost</th>
+                            <td>0.57</td>
+                            <td>0.63</td>
+                            <td>0.59</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+
+                <!-- Final choice -->
+                <p>The best model based on the metric results was the <b>Random forest</b>.
+                </p>
+                <p>github code for model selection process and ROC curver results can be found <a href="https://github.com/DavidObembe/Project-3---Spotify-music-recognision/blob/master/Spotify_Exploration.ipynb">here</a>. </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+    </script>
+    <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+</body>
+
+</html>
