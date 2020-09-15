@@ -18,6 +18,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <!-- CSS for Bootstrap Scrollspy Nav-->
     <link href="../static/css/scroll_spy.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="../static/js/index.js"></script> -->
+    <script type="module">
+        import define from "{{ url_for('static', filename='js/index.js') }}"; import {Runtime, Library, Inspector} from "{{ url_for('static', filename='js/runtime.js') }}"; const runtime = new Runtime(); const main = runtime.module(define, Inspector.into(document.body));
+    </script>
 </head>
 
 
@@ -149,11 +153,15 @@
         <div class="row">
             <div class="col-sm-4">
                 <h1>Genre Map</h1>
-                <script type="module">
-                    import define from "../static/index.js"; import {Runtime, Library, Inspector} from "../static/runtime.js"; const runtime = new Runtime(); const main = runtime.module(define, Inspector.into(document.body));
-                </script>
+
             </div>
         </div>
+
+        <!-- <script type="module">
+            import define from "{{ url_for('static', filename='js/index.js') }}"; import {Runtime, Library, Inspector} from "{{ url_for('static', filename='js/runtime.js') }}"; const runtime = new Runtime(); const main = runtime.module(define, Inspector.into(document.body));
+        </script> -->
+
+
 
         <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script>

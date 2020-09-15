@@ -44,6 +44,9 @@
                         <a class="nav-link" href="/mlmodels">ML Models <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link" href="/results">Results <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="/summary">Summary <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
@@ -107,24 +110,20 @@
         </div>
 
 
-        <!-- Marketing messaging and featurettes
-  ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-
+        <!-- Project Scope -->
         <div class="container marketing">
-
-
             <!-- START THE FEATURETTES -->
-
             <hr class="featurette-divider">
-
             <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <!-- <div class="col-md-1 order-md-1">
+                </div> -->
+                <div class="col-md-9 order-md-1">
+                    <h2 class="featurette-heading">Project Scope </h2>
+                    <p class="lead">Classifying songs by genre is a very subjective exercise. It is possible for the same song to match different genres as well as subgenres. Over time, the list of available genres increases as style and culture grow.</p>
+                    <p class="lead">Given the volume of content available on many of the streaming platforms, genre remains a valueable datapoint to filter and recommend new and related music to subscribers.</p>
+                    <p class="lead">This project aims to:</p>
                 </div>
-                <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                <div class="col-md-2 order-md-2">
                 </div>
             </div>
 
@@ -135,36 +134,36 @@
             <!-- Three columns of text below the carousel -->
             <div class="row">
                 <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    <img src="../static/assets/gear.svg" width="140" height="140" alt="">
+                    <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+                    <h2>Data Exploration</h2>
+                    <p>Analyze a <a href="https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks?select=data.csv" target="_blank">Kaggle dataset</a> containing 160,000+ Spotify songs</p>
+                    <p><a class="btn btn-secondary" href="/eda" role="button">View details &raquo;</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                    <h2>Heading</h2>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    <img src="../static/assets/deep-learning.svg" width="140" height="140" alt="">
+                    <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+                    <h2>Modelling</h2>
+                    <p>Explore various Machine Learning models and create a model to predict the genre of a song based on its audio features</p>
+                    <p><a class="btn btn-secondary" href="/mlmodels" role="button">View details &raquo;</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                        amet risus.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    <img src="../static/assets/chip.svg" width="140" height="140" alt="">
+                    <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+                    <h2>Predict</h2>
+                    <p>Evaluate the model against recently released music and assess its accuracy.</p>
+                    <p><a class="btn btn-secondary" href="/predictor" role="button">View details &raquo;</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
-
-
-
-
         </div>
         <!-- /.container -->
 
+        <br>
+        <br>
 
         <!-- FOOTER -->
         <footer class="container">
