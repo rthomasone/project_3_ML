@@ -1,9 +1,7 @@
 $(document).ready(function() {
     initializeViz();
-
+    // initializeViz3();
     initializeViz2();
-    initializeViz3();
-
 
     $("#pdf").click(function() {
         exportPDF();
@@ -55,41 +53,41 @@ function initializeViz2() {
         hideToolbar: true,
         onFirstInteractive: function() {
             workbook2 = viz.getWorkbook();
-            activeSheet = workbook.getActiveSheet();
+            activeSheet = workbook2.getActiveSheet();
         }
     };
     viz2 = new tableau.Viz(placeholderDiv2, url2, options2);
 }
 
 // third viz
-function initializeViz3() {
-    var placeholderDiv3 = document.getElementById("tableauViz3");
-    var url3 = "https://public.tableau.com/views/RD1_15997002017250/Story1";
-    var options3 = {
-        // width: placeholderDiv3.offsetWidth,
-        // height: placeholderDiv3.offsetHeight,
-        hideTabs: true,
-        hideToolbar: true,
-        onFirstInteractive: function() {
-            workbook3 = viz.getWorkbook();
-            activeSheet = workbook.getActiveSheet();
-        }
-    };
-    Viz3 = new tableau.Viz(placeholderDiv3, url3, options3);
-}
+// function initializeViz3() {
+//     var placeholderDiv3 = document.getElementById("tableauViz3");
+//     var url3 = "https://public.tableau.com/views/SpotifyML/Dashboard1";
+//     var options3 = {
+//         // width: placeholderDiv3.offsetWidth,
+//         // height: placeholderDiv3.offsetHeight,
+//         hideTabs: true,
+//         hideToolbar: true,
+//         onFirstInteractive: function() {
+//             workbook3 = viz.getWorkbook();
+//             activeSheet = workbook3.getActiveSheet();
+//         }
+//     };
+//     Viz3 = new tableau.Viz(placeholderDiv3, url3, options3);
+// }
 
 
 // buttons
 function exportPDF() {
     viz.showExportPDFDialog();
     viz2.showExportPDFDialog();
-    Viz3.showExportPDFDialog();
+    // Viz3.showExportPDFDialog();
 }
 
 function exportImage() {
     viz.showExportImageDialog();
     viz2.showExportImageDialog();
-    Viz3.showExportImageDialog();
+    // Viz3.showExportImageDialog();
 }
 
 // function exportCrossTab() {
@@ -101,7 +99,7 @@ function exportImage() {
 function exportData() {
     viz.showExportDataDialog();
     viz2.showExportDataDialog();
-    viz3.showExportDataDialog();
+    // viz3.showExportDataDialog();
 }
 
 // function revertAll() {

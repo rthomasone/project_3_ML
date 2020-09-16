@@ -77,14 +77,14 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Machine Learning Models</h1>
-            <p class="lead">Recently released songs were processed by the model to predict their genre.</p>
+            <p class="lead"></p>
         </div>
     </div>
 
 
 
     <!-- Content -->
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
 
@@ -99,14 +99,14 @@
 
                 <div class="row">
                     <div class="col-lg-3">
-                        <img src="../static/assets/gear.svg" width="140" height="140" alt="">
+                        <img src="../static/assets/power.svg" width="140" height="140" alt="">
                         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
                         <h2>Clustering</h2>
                         <p>The original Spotify data set has over a hundred different genres/sub-genres. How can we know how many genres to narrow it down to? We looked to K-Means Clustering Analysis and Silhouette Analysis for some insights. The K-Means
                             clustering algorithm suggested that between 4-6 genres would be most optimal. The team felt that 4-6 genres was too small. The silhouette analysis suggested that 4 or 12 genres would be most optimal. Twelve genres was chosen.</p>
                     </div>
                     <div class="col-lg-3">
-                        <img src="../static/assets/gear.svg" width="140" height="140" alt="">
+                        <img src="../static/assets/circuit.svg" width="140" height="140" alt="">
                         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
                         <h2>Logistic Regression</h2>
                         <p>The first model attempted was the logistic regression because it is the simplest. It works by using the sigmoid function (logistic function) to map and predict the probabilities of a track falling into a genre. If the probability
@@ -114,14 +114,14 @@
                     </div>
                     <!-- /.col-lg-4 -->
                     <div class="col-lg-3">
-                        <img src="../static/assets/deep-learning.svg" width="140" height="140" alt="">
+                        <img src="../static/assets/brain.svg" width="140" height="140" alt="">
                         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
                         <h2>Random Forest</h2>
                         <p>Since we were tackling our models in the order of simplicity, the next model was the random forest classifer; an ensemble tree based learning algorithm that combines decision trees.</p>
                     </div>
                     <!-- /.col-lg-4 -->
                     <div class="col-lg-3">
-                        <img src="../static/assets/chip.svg" width="140" height="140" alt="">
+                        <img src="../static/assets/repair.svg" width="140" height="140" alt="">
                         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
                         <h2>XGBoost</h2>
                         <p>The final model that we tested was the extreme gradient boosting classifier. It is an implementation of gradient boosted decision trees designed for speed and performance</p>
@@ -134,9 +134,11 @@
 
                 <!-- Comparison -->
                 <h1>Comparison & Selection</h1>
-                <p>We used the ROC curve, Accuracy, Precision and Recall metrics to decide on the best model for predicting genres.These were the results: </p>
+                <p>After completing an analysis three different models, ROC curve, Accuracy, Precision and Recall metrics were used to identify the best model for predicting genres.</p>
+                <p>For reference, here is the <a href="https://github.com/DavidObembe/Project-3---Spotify-music-recognision/blob/master/Spotify_Exploration.ipynb" target="_blank">Jupyter Notebook</a> for review as well as a summary of the model performance:</p>
                 <br>
                 <br>
+
 
 
                 <div class="row">
@@ -187,10 +189,18 @@
 
 
     <!-- Validation -->
-    <h1>Validation</h1>
-    <div class="container-fluid">
+
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <h1>Validation</h1>
+
+                <p>In order to test the model, 21 recently released tracks that were identified and confirmed not to be present within the dataset. Next, the <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/"
+                        target="_blank">Spotify API</a> was used to retrieve the features of each track. The details of the validation are with this <a href="https://github.com/DavidObembe/Project-3---Spotify-music-recognision/blob/ryan/predictions_3.ipynb"
+                        target="_blank">notebook</a>.</p>
+
+
+
                 <table border="1" class="table table-hover stripe" style="width:100%; text-align: center;" id="prediction_summary">
                     <!-- <table border="1" class="dataframe"> -->
                     <thead>
