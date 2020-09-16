@@ -14,9 +14,9 @@ def index():
 def eda():
     return render_template("eda.html")
 
-@app.route("/features")
-def features():
-    return render_template("features.html")
+# @app.route("/features")
+# def features():
+#     return render_template("features.html")
 
 @app.route("/methodology")
 def methodology():

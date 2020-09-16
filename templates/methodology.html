@@ -2,8 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Methodology</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Audio Features</title>
     <!-- Import Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Import Bootswatch CSS -->
@@ -12,10 +16,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- CSS for Bootstrap Scrollspy Nav-->
+    <link href="../static/css/scroll_spy.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="../static/js/index.js"></script> -->
+    <script type="module">
+        import define from "{{ url_for('static', filename='js/index.js') }}"; import {Runtime, Library, Inspector} from "{{ url_for('static', filename='js/runtime.js') }}"; const runtime = new Runtime(); const main = runtime.module(define, Inspector.into(document.body));
+    </script>
 </head>
 
 
-<body>
+<body data-spy="scroll" data-target="#audio-features" data-offset="20">
+
     <!-- Navigation Bar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -31,9 +42,6 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/features">Audio Features <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
                         <a class="nav-link" href="/methodology">Methodology <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
@@ -46,7 +54,7 @@
                         <a class="nav-link" href="/summary">Summary <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/predictor">Predictor <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/predictor">Genre Predictor <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/aboutus">About Us <span class="sr-only">(current)</span></a>
@@ -57,71 +65,195 @@
     </header>
 
 
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Methodology</h1>
-            <p class="lead">Recently released songs were processed by the model to predict their genre.</p>
-        </div>
-    </div>
+    <main role="main">
 
-    <!-- this is where my website links and picture are located -->
-    <div class="album py-5 bg-light">
-
-        <div class="container">
-
-            <h4>Data Gathering</h4>
-            <p>To begin building a model, we needed a lot of data. A large dataset was needed so that our model could make accurate class label assignments. </p>
-            <p>On the Kaggle website, there were multiple pre-compiled csv files with collections of information from Spotify API. Therefore, we simply chose a dataset containing Spotify data from 1921 up until 2020 and containing 160,000 tracks. Doing this
-                made data collection quick and efficient as well as provided our model with large data. </p>
-        </div>
-
-        <div class="container">
-            <!-- genre mapping -->
-            <h4>Genre Mapping</h4>
-            <p>The dataset initially contained up to 96 genre categories. We simplified it by mapping all 96 genre groups to 12 genres. These were the genre categories we came up with</p>
-            <div class="row">
-                <img src="../static/assets/genre_mapping_table.png" alt="">
+        <!-- Jumbotron -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Methodology</h1>
+                <p class="lead"></p>
             </div>
+        </div>
 
+
+        <!-- Data Gathering -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Data Gathering</h1>
+                    <p>Kaggle hosts a <a href="https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks?select=data.csv" target="_blank">dataset</a> of 160,000+ songs obtained from the Spotify API spanning 1921 to 2020. This dataset contains
+                        various metadata including:</p>
+
+                    <ul>
+                        <li>artist</li>
+                        <li>release date</li>
+                        <li>track title</li>
+                        <li>Spotify track ID</li>
+                        <li>various audio features</li>
+                    </ul>
+
+                    <p><a href="https://developer.spotify.com/documentation/web-api/reference/artists/get-artist/" target="_blank">Spotify API </a> associates the genre field with the artist. As such, an artist can have content matching multiple genres (e.g.
+                        dance pop, latin, miami hip hop, pop, pop rap). The tracks from this artists are then inherit the associated genres. </p>
+
+                    <pre>
+                <code>
+                    {
+                        "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+                        },
+                        "followers": {
+                        "href": null,
+                        "total": 7907919
+                        },
+                        "genres": [
+                        "dance pop",
+                        "latin",
+                        "miami hip hop",
+                        "pop",
+                        "pop rap"
+                        ],
+                        "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+                        "id": "0TnOYISbd1XYRBk9myaseg",
+                        "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/1353990534aef10c946cf3a47865ac22471be5c4",
+                            "width": 640
+                        },
+                        {
+                            "height": 320,
+                            "url": "https://i.scdn.co/image/f3a0aca9f85c6cdad37ebcc51a01879bf8c50af9",
+                            "width": 320
+                        },
+                        {
+                            "height": 160,
+                            "url": "https://i.scdn.co/image/5ede30313c461d7ed0f5c4f3dea484fd349d49a9",
+                            "width": 160
+                        }
+                        ],
+                        "name": "Pitbull",
+                        "popularity": 85,
+                        "type": "artist",
+                        "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+                    }
+                </code>
+            </pre>
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+
+        <!-- Audio Features-->
+        <div class="container">
+            <h1>Spotify Audio Features</h1>
+            <p>Here is a description of the various <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/" target="_blank">audio features</a> captured for each track:</p>
+
+            <!-- ScrollSpy - Audio Features-->
+            <!-- <div class="bd-example"> -->
+            <div class="row">
+                <div class="col-4">
+                    <nav id="navbar-example3" class="navbar navbar-light bg-light flex-column audio-features">
+                        <a class="navbar-brand" href="#"></a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link" href="#acousticness">acousticness</a>
+                            <a class="nav-link" href="#danceability">danceability</a>
+                            <a class="nav-link" href="#duration">duration_ms</a>
+                            <a class="nav-link" href="#energy">energy</a>
+                            <a class="nav-link" href="#instrumentalness">instrumentalness</a>
+                            <a class="nav-link" href="#key">key</a>
+                            <a class="nav-link" href="#liveness">liveness</a>
+                            <a class="nav-link" href="#loudness">loudness</a>
+                            <a class="nav-link" href="#mode">mode</a>
+                            <a class="nav-link" href="#speechiness">speechicness</a>
+                            <a class="nav-link" href="#tempo">tempo</a>
+                            <a class="nav-link" href="#time_signature">time_signature</a>
+                            <a class="nav-link" href="#valence">valence</a>
+                        </nav>
+                    </nav>
+                </div>
+                <div class="col-sm-6">
+                    <!-- <a class="audio-features"> -->
+                    <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="scrollspy-example-2">
+                        <h5 id="acousticness">acousticness</h5>
+                        <p>A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</p>
+                        <h5 id="danceability">danceability</h5>
+                        <p>how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</p>
+                        <h5 id="duration">duration</h5>
+                        <p>Duration of the track in milliseconds</p>
+                        <h5 id="energy">energy</h5>
+                        <p>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.</p>
+                        <h5 id="instrumentalness">instrumentalness</h5>
+                        <p>Predicts whether a track contains no vocals. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content.</p>
+                        <h5 id="key">key</h5>
+                        <p>Estimated overall key of the track (e.g 0 = C, 1 = C♯/D♭, 2 = D)</p>
+                        <h5 id="liveness">liveness</h5>
+                        <p>Detects the presence of an audience in the recording. A value above 0.8 provides strong likelihood that the track is live.</p>
+                        <h5 id="loudness">loudness</h5>
+                        <p>The overall loudness of a track in decibels (dB).</p>
+                        <h5 id="mode">mode</h5>
+                        <p>The type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.</p>
+                        <h5 id="speechicness">speechicness</h5>
+                        <p>Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value.</p>
+                        <h5 id="tempo">tempo</h5>
+                        <p>The overall estimated tempo of a track in beats per minute (BPM).</p>
+                        <h5 id="time_signature">time_signature</h5>
+                        <p>Number of beats in a bar.</p>
+                        <h5 id="valence">valence</h5>
+                        <p>A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed,
+                            angry).
+                        </p>
+                        <!-- </a> -->
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
         </div>
 
         <br>
-        <div class="container">
-            <!-- Exploring audio features by genre -->
+        <br>
 
-            <h4>Encoding Genre</h4>
-            <p>The final stage of our data cleaning process was to one-hot encode the data. This entailed converting the genre columns into 12 columns representing genre categories, and then using 0’s and 1’s to represent the nonexistence or existence of
-                a category, respectively.
-            </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Genre Mapping</h1>
+                    <p>A machine learning model was developed to assign one of 12 genres to a given song. As highlighted previously, multiple genres are associated with an individual track. During the data cleaning process, a function was developed to string
+                        match the 100+ genres to the 12 target genres:</p>
+                </div>
+            </div>
 
             <div class="row">
-                <img src="../static/assets/encoding genre.png" alt="">
+                <div class="col-sm-4">
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-action active">Classical</button>
+                        <button type="button" class="list-group-item list-group-item-action">Country</button>
+                        <button type="button" class="list-group-item list-group-item-action">Electronic</button>
+                        <button type="button" class="list-group-item list-group-item-action">Indie</button>
+                        <button type="button" class="list-group-item list-group-item-action">Jazz</button>
+                        <button type="button" class="list-group-item list-group-item-action">Latin</button>
+                        <button type="button" class="list-group-item list-group-item-action">Pop</button>
+                        <button type="button" class="list-group-item list-group-item-action">R&B</button>
+                        <button type="button" class="list-group-item list-group-item-action">Rap</button>
+                        <button type="button" class="list-group-item list-group-item-action">Rock</button>
+                        <button type="button" class="list-group-item list-group-item-action">Show Tunes</button>
+                        <button type="button" class="list-group-item list-group-item-action">Worjship</button>
+                    </div>
+                </div>
             </div>
+
+            <br>
             <br>
 
-
-            <!-- Final choice -->
-            <p>The best model based on the metric results was the <b>Random forest</b>.
-            </p>
-            <p>github code for model selection process and ROC curver results can be found <a href="https://github.com/DavidObembe/Project-3---Spotify-music-recognision/blob/master/Spotify_Exploration.ipynb">here</a>. </p>
-
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Below is an interactive visualization illustrating how the various genres were string matched to the target genres. It was inspired by an
+                        <a href="https://observablehq.com/@d3/zoomable-sunburst?collection=@d3/d3-hierarchy" target="_blank">Observable Sunburst Chart</a>.</p>
+                </div>
+            </div>
         </div>
 
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; Published 2020. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
     </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
-    </script>
-    <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 </body>
 
 </html>

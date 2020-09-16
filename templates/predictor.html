@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predictor</title>
+    <title>Genre Predictor</title>
     <!-- Import Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Import Bootswatch CSS -->
@@ -34,9 +34,6 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/features">Audio Features <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
                         <a class="nav-link" href="/methodology">Methodology <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
@@ -49,7 +46,7 @@
                         <a class="nav-link" href="/summary">Summary <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/predictor">Predictor <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/predictor">Genre Predictor <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/aboutus">About Us <span class="sr-only">(current)</span></a>
@@ -60,50 +57,72 @@
     </header>
 
 
-    <form class="form-signin">
-        <br>
-
-        <img class="mb-4" src="../static/assets/chip.svg" alt="" width="140" height="140">
-        <h1 class="h3 mb-3 font-weight-normal">Genre Predictor</h1>
-
-        <label for="inputEmail" class="sr-only">Feature 1</label>
-        <!-- danceability -->
-        <input type="text" id="dance" class="form-control" placeholder="danceability" required="" autofocus="">
-        <!-- valence-->
-        <input type="text" id="valence" class="form-control" placeholder="valence" required="" autofocus="">
-        <!-- energy -->
-        <input type="text" id="energy" class="form-control" placeholder="energy" required="" autofocus="">
-        <!-- tempo -->
-        <input type="text" id="tempo" class="form-control" placeholder="tempo" required="" autofocus="">
-        <!-- liveness -->
-        <input type="text" id="liveness" class="form-control" placeholder="liveness" required="" autofocus="">
-        <!-- loudness -->
-        <input type="text" id="loudness" class="form-control" placeholder="loudness" required="" autofocus="">
-        <!-- instrumentalness -->
-        <input type="text" id="instrumentalness" class="form-control" placeholder="instrumentalness" required="" autofocus="">
-        <!-- speechiness -->
-        <input type="text" id="speechiness" class="form-control" placeholder="speechiness" required="" autofocus="">
-        <!-- duration -->
-        <input type="text" id="duration" class="form-control" placeholder="duration" required="" autofocus="">
-        <!-- acousticness -->
-        <input type="text" id="acousticness" class="form-control" placeholder="acousticness" required="" autofocus="">
-        <!-- popularity -->
-        <input type="text" id="popularity" class="form-control" placeholder="popularity" required="" autofocus="">
-        <!-- key -->
-        <input type="text" id="key" class="form-control" placeholder="key" required="" autofocus="">
-        <!-- Mode -->
-        <input type="text" id="mode" class="form-control" placeholder="mode" required="" autofocus="">
-
-        <br>
-        <button class="btn btn-lg btn-primary btn-block" id="submit" type="submit">Whats the Genre?</button>
-
-        <br>
-
-        <!-- Prediction Output -->
-        <div>
-            <h1>Your genre is <span id="prediction"></span></h1>
+    <!-- Jumbotron
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Genre Predictor</h1>
+                        <p class="lead">Enter the audio features of a track to obtain the corresponding genre.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
+    </div> -->
+
+
+    <!-- Form -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-signin">
+                    <br>
+
+                    <img class="mb-4" src="../static/assets/chip.svg" alt="" width="140" height="140">
+                    <h1 class="h3 mb-3 font-weight-normal">Genre Predictor</h1>
+
+                    <label for="inputEmail" class="sr-only">Feature 1</label>
+                    <!-- danceability -->
+                    <input type="text" id="dance" class="form-control" placeholder="danceability" required="" autofocus="">
+                    <!-- valence-->
+                    <input type="text" id="valence" class="form-control" placeholder="valence" required="" autofocus="">
+                    <!-- energy -->
+                    <input type="text" id="energy" class="form-control" placeholder="energy" required="" autofocus="">
+                    <!-- tempo -->
+                    <input type="text" id="tempo" class="form-control" placeholder="tempo" required="" autofocus="">
+                    <!-- liveness -->
+                    <input type="text" id="liveness" class="form-control" placeholder="liveness" required="" autofocus="">
+                    <!-- loudness -->
+                    <input type="text" id="loudness" class="form-control" placeholder="loudness" required="" autofocus="">
+                    <!-- instrumentalness -->
+                    <input type="text" id="instrumentalness" class="form-control" placeholder="instrumentalness" required="" autofocus="">
+                    <!-- speechiness -->
+                    <input type="text" id="speechiness" class="form-control" placeholder="speechiness" required="" autofocus="">
+                    <!-- duration -->
+                    <input type="text" id="duration" class="form-control" placeholder="duration" required="" autofocus="">
+                    <!-- acousticness -->
+                    <input type="text" id="acousticness" class="form-control" placeholder="acousticness" required="" autofocus="">
+                    <!-- popularity -->
+                    <input type="text" id="popularity" class="form-control" placeholder="popularity" required="" autofocus="">
+                    <!-- key -->
+                    <input type="text" id="key" class="form-control" placeholder="key" required="" autofocus="">
+                    <!-- Mode -->
+                    <input type="text" id="mode" class="form-control" placeholder="mode" required="" autofocus="">
+
+                    <br>
+                    <button class="btn btn-lg btn-primary btn-block" id="submit" type="submit">Whats the Genre?</button>
+
+                    <br>
+
+                    <!-- Prediction Output -->
+                    <div>
+                        <h1>Your genre is <span id="prediction"></span></h1>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER
     <footer class="container">
