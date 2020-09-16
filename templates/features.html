@@ -45,19 +45,22 @@
                         <a class="nav-link" href="/features">Audio Features <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link" href="/methodology">Methodology <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="/eda">Data Exploration <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/mlmodels">ML Models <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/results">Results <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
                         <a class="nav-link" href="/summary">Summary <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/predictor">Predictor <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/aboutus">About Us <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -66,21 +69,14 @@
 
 
     <main role="main">
+
         <!-- Jumbotron -->
-        <div class="container">
-            <div class="row" class="col-lg-12 center-block">
-                <div class="jumbotron">
-                    <h1 class="display-3">Spotify Audio Features</h1>
-                    <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                    </p> -->
-                </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Spotify Audio Features</h1>
+                <p class="lead">Recently released songs were processed by the model to predict their genre.</p>
             </div>
         </div>
-
 
 
         <!-- Insert Body Text -->
@@ -113,15 +109,15 @@
                 <div class="col-sm-6">
                     <!-- <a class="audio-features"> -->
                     <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="scrollspy-example-2">
-                        <h4 id="acousticness">acousticness</h4>
+                        <h5 id="acousticness">acousticness</h5>
                         <p>A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</p>
                         <h5 id="danceability">danceability</h5>
                         <p>how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</p>
                         <h5 id="duration">duration</h5>
                         <p>Duration of the track in milliseconds</p>
-                        <h4 id="energy">energy</h4>
+                        <h5 id="energy">energy</h5>
                         <p>Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.</p>
-                        <h4 id="instrumentalness">instrumentalness</h4>
+                        <h5 id="instrumentalness">instrumentalness</h5>
                         <p>Predicts whether a track contains no vocals. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content.</p>
                         <h5 id="key">key</h5>
                         <p>Estimated overall key of the track (e.g 0 = C, 1 = C♯/D♭, 2 = D)</p>
@@ -156,6 +152,8 @@
 
             </div>
         </div>
+
+
 
         <!-- <script type="module">
             import define from "{{ url_for('static', filename='js/index.js') }}"; import {Runtime, Library, Inspector} from "{{ url_for('static', filename='js/runtime.js') }}"; const runtime = new Runtime(); const main = runtime.module(define, Inspector.into(document.body));

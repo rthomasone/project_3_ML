@@ -2,17 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Summary</title>
+    <meta charset="UTF-8">
+    <title>Methodology</title>
     <!-- Import Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Import Bootswatch CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cyborg/bootstrap.min.css" integrity="sha384-Uga2yStKRHUWCS7ORqIZhJ9LIAv4i7gZuEdoR1QAmw6H+ffhcf7yCOd0CvSoNwoz" crossorigin="anonymous">
-    <!-- Import Bootstap JS, Popper.js, and jQuery -->
+    <!-- Import Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -64,18 +60,55 @@
     <!-- Jumbotron -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Summary</h1>
+            <h1 class="display-4">Methodology</h1>
             <p class="lead">Recently released songs were processed by the model to predict their genre.</p>
         </div>
     </div>
 
-    <!-- Insert Body Text -->
+    <!-- this is where my website links and picture are located -->
+    <div class="album py-5 bg-light">
+
+        <div class="container">
+
+            <h4>Data Gathering</h4>
+            <p>To begin building a model, we needed a lot of data. A large dataset was needed so that our model could make accurate class label assignments. </p>
+            <p>On the Kaggle website, there were multiple pre-compiled csv files with collections of information from Spotify API. Therefore, we simply chose a dataset containing Spotify data from 1921 up until 2020 and containing 160,000 tracks. Doing this
+                made data collection quick and efficient as well as provided our model with large data. </p>
+        </div>
+
+        <div class="container">
+            <!-- genre mapping -->
+            <h4>Genre Mapping</h4>
+            <p>The dataset initially contained up to 96 genre categories. We simplified it by mapping all 96 genre groups to 12 genres. These were the genre categories we came up with</p>
+            <div class="row">
+                <img src="../static/assets/genre_mapping_table.png" alt="">
+            </div>
+
+        </div>
+
+        <br>
+        <div class="container">
+            <!-- Exploring audio features by genre -->
+
+            <h4>Encoding Genre</h4>
+            <p>The final stage of our data cleaning process was to one-hot encode the data. This entailed converting the genre columns into 12 columns representing genre categories, and then using 0’s and 1’s to represent the nonexistence or existence of
+                a category, respectively.
+            </p>
+
+            <div class="row">
+                <img src="../static/assets/encoding genre.png" alt="">
+            </div>
+            <br>
 
 
+            <!-- Final choice -->
+            <p>The best model based on the metric results was the <b>Random forest</b>.
+            </p>
+            <p>github code for model selection process and ROC curver results can be found <a href="https://github.com/DavidObembe/Project-3---Spotify-music-recognision/blob/master/Spotify_Exploration.ipynb">here</a>. </p>
 
+        </div>
 
     </div>
-    <!-- /.container -->
 
 
     <!-- FOOTER -->

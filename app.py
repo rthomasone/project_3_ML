@@ -18,17 +18,25 @@ def eda():
 def features():
     return render_template("features.html")
 
+@app.route("/methodology")
+def methodology():
+    return render_template("methodology.html")
+
 @app.route("/mlmodels")
 def mlmodels():
     return render_template("mlmodels.html")
 
-@app.route("/results")
-def results():
-    return render_template("results.html")
+# @app.route("/results")
+# def results():
+#     return render_template("results.html")
 
 @app.route("/summary")
 def summary():
     return render_template("summary.html")
+
+@app.route("/aboutus")
+def aboutus():
+    return render_template("aboutus.html")
 
 @app.route("/predictor")
 def predictor():
