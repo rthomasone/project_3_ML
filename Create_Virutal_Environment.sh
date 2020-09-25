@@ -1,7 +1,7 @@
 #Create Project Folder in Non-Privileged User Folder
 printf "\n##Create Project Folder in Non-Privileged User Folder\n"
 whoami
-mkdir /home/ubuntu/myproject
+mkdir -v /home/ubuntu/myproject
 ls -lh /home/ubuntu/myproject
 
 
